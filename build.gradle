@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "net.my.test"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1000
+        versionName "1000"
+        manifestPlaceholders = [
+                onesignal_app_id: '21e4d099-07b4-41eb-a0dc-ab6ddddaa35e',
+                // Project number pulled from dashboard, local value is ignored.
+                onesignal_google_project_number: 'REMOTE'
+        ]
+    }
+    buildTypes {
+        release {
+//            minifyEnabled false
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.onesignal:OneSignal:[3.15.0, 3.99.99]'
+}
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.google.com' }
+}

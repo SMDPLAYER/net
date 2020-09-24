@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Golden Ring Test</string>
+
+    <string name="local_achivments">local_achivments</string>
+    <string name="points">POINTS</string>
+    <string name="lives">LIVES</string>
+    <string name="personal_record">PRESONAL RECOPRD</string>
+    <string name="personal_record_dialog">Personal Records Best:</string>
+    <string name="play">PLAY GAME</string>
+    <string name="game_over">GAME IS OVER</string>
+    <string name="current_points">YOUR POINTS:</string>
+    <string name="music">MUSIC</string>
+
+</resources>
